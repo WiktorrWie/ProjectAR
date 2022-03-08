@@ -11,8 +11,7 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, camera } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
+import ARTab from './pages/ARTab';
 import Profile from './pages/Profile';
 
 /* Core CSS required for Ionic components to work properly */
@@ -37,41 +36,37 @@ import './theme/variables.css';
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
-          </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
-          </Route>
-          <Route path="/tab3">
-            <Profile />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={camera} />
-            
-            <IonLabel>Tab 1</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/profile">
-            <IonIcon icon={square} />
-            <IonLabel>Profile</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
+	<IonApp>
+		<IonReactRouter>
+			<IonTabs>
+				<IonRouterOutlet>
+					<Route exact path='/artab'>
+						<ARTab />
+					</Route>
+					<Route path='/profile'>
+						<Profile />
+					</Route>
+					<Route exact path='/'>
+						<Redirect to='/artab' />
+					</Route>
+				</IonRouterOutlet>
+				<IonTabBar slot='bottom'>
+					<IonTabButton tab='artab' href='/artab'>
+						<IonIcon icon={camera} />
+						<IonLabel>ARTab</IonLabel>
+					</IonTabButton>
+					<IonTabButton tab='tab2' href='/tab2'>
+						<IonIcon icon={ellipse} />
+						<IonLabel>The Map</IonLabel>
+					</IonTabButton>
+					<IonTabButton tab='profile' href='/profile/posts'>
+						<IonIcon icon={square} />
+						<IonLabel>Profile</IonLabel>
+					</IonTabButton>
+				</IonTabBar>
+			</IonTabs>
+		</IonReactRouter>
+	</IonApp>
 );
 
 export default App;
