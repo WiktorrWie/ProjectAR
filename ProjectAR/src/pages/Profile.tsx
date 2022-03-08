@@ -5,7 +5,8 @@ import PostsContainer from '../components/profile/PostsContainer';
 import './Profile.css';
 
 const Profile: React.FC = () => {
-	return (
+  return (
+    
 		<IonTabs>
 			<IonHeader>Profile</IonHeader>
 			<IonTabBar slot='bottom'>
@@ -15,13 +16,15 @@ const Profile: React.FC = () => {
 				<IonTabButton tab='meals' href='/profile/settings'>
 					<IonLabel>Settings</IonLabel>
 				</IonTabButton>
-			</IonTabBar>
+      </IonTabBar>
+      
 
 			<IonRouterOutlet>
 				<Route path='/profile/settings' component={SettingsContainer} exact />
 				<Route path='/profile/posts' component={PostsContainer} exact />
 			</IonRouterOutlet>
-		</IonTabs>
+    </IonTabs>
+    
 	);
 };
 

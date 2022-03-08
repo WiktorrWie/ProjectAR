@@ -234,3 +234,19 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 }
+
+body.light {
+  --ion-background-color: #fff;
+  --ion-background-color-rgb: 255,255,255;
+
+  --ion-text-color: #121212;
+  --ion-text-color-rgb:  18,18,18;
+
+  --ion-item-background: #fff;
+
+  color: #121212;
+}
+
+.ios .body.dark {}
+
+.md .body.dark {}
