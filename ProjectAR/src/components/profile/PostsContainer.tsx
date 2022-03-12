@@ -9,6 +9,7 @@ const PostsContainer: React.FC<PostsProps> = ({ name }) => {
 	return (
 		<div className='postsContainer'>
 			<h1>{name}</h1>
+			something
 			<div className="postProfile">
 				{exampleARPosts.map((post) => {
 					return (

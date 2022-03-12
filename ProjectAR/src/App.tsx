@@ -10,10 +10,11 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { person, map, camera } from 'ionicons/icons';
+import { person, map, camera, settings, addCircle } from 'ionicons/icons';
 import ARTab from './pages/ARTab';
 import Profile from './pages/Profile';
-import tab2 from './pages/Tab2';
+import Map from './pages/Map';
+import AddPost from './pages/AddPost';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -49,6 +50,9 @@ const App: React.FC = () => (
 					</Route>
 					<Route exact path='/'>
 						<Redirect to='/artab' />
+          </Route>
+          <Route path='/AddPost'>
+						<AddPost />
 					</Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -56,12 +60,19 @@ const App: React.FC = () => (
             <IonIcon icon={camera} />
             <IonLabel>AR camera</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="Map" href="/Map">
             <IonIcon icon={map} />
             <IonLabel>Map</IonLabel>
           </IonTabButton>
+          <IonTabButton tab="addPost" href="/AddPost">
+            <IonIcon class='addCircle' icon={addCircle} />
+          </IonTabButton>
           <IonTabButton tab="profile" href='/profile/posts'>
             <IonIcon icon={person} />
+            <IonLabel>Profile</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="settings" href='/profile/settings'>
+            <IonIcon icon={settings} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
         </IonTabBar>
