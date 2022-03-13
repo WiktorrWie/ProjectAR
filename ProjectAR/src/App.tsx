@@ -15,7 +15,7 @@ import ARTab from './pages/ARTab';
 import Profile from './pages/Profile';
 import Map from './pages/Map';
 import AddPost from './pages/AddPost';
-import SettingsContainer from './pages/SettingsContainer';
+import Settings from './pages/Settings';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -55,6 +55,9 @@ const App: React.FC = () => (
           </Route>
           <Route path='/AddPost'>
 						<AddPost />
+          </Route>
+          <Route path='/Settings'>
+						<Settings />
 					</Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -73,7 +76,7 @@ const App: React.FC = () => (
             <IonIcon icon={person} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="SettingsContainer" href='/SettingsContainer'>
+          <IonTabButton tab="Settings" href='/settings'>
             <IonIcon icon={settings} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>

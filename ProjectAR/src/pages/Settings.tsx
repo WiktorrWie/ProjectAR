@@ -1,12 +1,12 @@
 import { IonButton, IonList, IonItem, IonIcon, IonLabel, IonToggle  } from '@ionic/react';
-import './SettingsContainer.css';
+import './Settings.css';
 import { sunny } from 'ionicons/icons';
 interface SettingsProps{
   name: string;
 }
 const toggleLightModeHandler = () => document.body.classList.toggle('light');
 
-const SettingsContainer: React.FC<SettingsProps> = ({ name }) => {
+const Settings: React.FC<SettingsProps> = ({ name }) => {
   return (
 		<div className='settingsContainer'>
 			<h1>{name}</h1>
@@ -33,4 +33,4 @@ const SettingsContainer: React.FC<SettingsProps> = ({ name }) => {
 	);
 };
 
-export default SettingsContainer;
+export default Settings;
