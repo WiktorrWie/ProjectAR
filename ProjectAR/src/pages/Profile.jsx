@@ -1,12 +1,11 @@
 import { IonPage, IonHeader, IonContent, IonLabel, IonRouterOutlet, IonTabs, IonTitle, IonToolbar, IonTabBar, IonTabButton, useIonViewWillEnter, IonRefresherContent, IonList, IonRefresher} from '@ionic/react';
 import { Route } from 'react-router';
-import SettingsContainer from '../components/profile/SettingsContainer';
+import SettingsContainer from './SettingsContainer';
 import PostsContainer from '../components/profile/PostsContainer';
 import './Profile.css';
 import { postsRef, getPostRef, db } from "../firebase-config";
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from "firebase/firestore";
-import PostListItem from "../components/PostListItem";
 
 /*
 function App(){
@@ -27,6 +26,7 @@ export default function PostsPage() {
     const [posts, setPosts] = useState([]);
 
     async function loadPosts() {
+        //const url = "https://project-ar-9bac5-default-rtdb.firebaseio.com/posts.json";
         const url = "https://race-rest-default-rtdb.firebaseio.com/posts.json";
         const response = await fetch(url);
         const data = await response.json();
@@ -64,7 +64,7 @@ export default function PostsPage() {
 
                 <IonList>
                     {posts.map(post => (
-                        <PostListItem post={post} key={post.id} />
+                        <PostsContainer post={post} key={post.id} />
                     ))}
                 </IonList>
             </IonContent>
